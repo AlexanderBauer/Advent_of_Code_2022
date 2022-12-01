@@ -1,6 +1,3 @@
-// scala -nobootcp -nc day1.sc
-
-// imports
 import scala.io.Source
 
 object day1 {
@@ -10,15 +7,18 @@ object day1 {
     var elf_calories: Int = 0
     var calories_list = new Array[Int](0)
 
+    // read file
     val filename = "../inputs/day1.txt"
 
     for (calories <- Source.fromFile(filename).getLines) {
         if(calories == "") {
+          // new elf -> append calories to list and reset to zero
           calories_list +:= elf_calories
           elf_calories = 0;
         }
         else {
-            elf_calories += calories.toInt
+          // increase elf_calories by calories for food item
+          elf_calories += calories.toInt
         }
     }
 
