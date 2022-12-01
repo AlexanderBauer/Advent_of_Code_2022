@@ -4,9 +4,9 @@
 import helper
 
 # function for building list of calories
-def calories_list():
+def get_calories_list():
     # read data from txt file
-    data = helper.read_data('inputs/day1.txt')
+    data = helper.read_data('../inputs/day1.txt')
 
     # split string in list by new lines
     food_list = data. splitlines()
@@ -29,7 +29,7 @@ def calories_list():
     return calories_list
 
 # generate list of calories per elf
-calories_list = calories_list()
+calories_list = get_calories_list()
 
 # solution part one - calories top 1 elf
 solution_part_one = max(calories_list) # 70374
